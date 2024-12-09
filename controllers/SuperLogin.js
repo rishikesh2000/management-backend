@@ -36,8 +36,7 @@ exports.superUserRegister = async ( req, res) => {
     
         res.status(201).json({ message: "User registered successfully" });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Internal Server Error" });
+        res.status(500).json({ message: "Internal Server Error", error });
     }
     
 }
@@ -65,8 +64,7 @@ exports.superLogin = async (req, res) => {
             return res.status(400).send("Email does not exist");
         }
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'Internal Server Error' });
+        res.status(500).json({ message: 'Internal Server Error', error });
     }
 };
 
@@ -85,7 +83,6 @@ exports.getLoggedInUser = async (req, res) => {
                 user,
             });
         } catch (error) {
-            console.error('Error fetching user data:', error);
-            res.status(500).json({ message: 'Internal Server Error' });
+            res.status(500).json({ message: 'Internal Server Error', error });
         }
     }
