@@ -14,7 +14,7 @@ const superUserRoute = require('./views/superUserView')
 const port = parseInt(process.env.PORT);
 
 app.get('/', (req, res) => {
-    res.send('Server is up and running!');
+    res.send('Server is running!');
 });
 
 app.use('/', adduserRoute);
