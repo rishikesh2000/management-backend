@@ -9,12 +9,13 @@ require('./config/dbConfig');
 const app = express();
 
 const corsOptions = {
-    origin: 'https://management-frontend-lyart.vercel.app/', 
+    origin: 'https://management-frontend-lyart.vercel.app', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'], 
     credentials: true,
 };
 
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(express.json()); 
 
 const adduserRoute = require('./views/usersView');
