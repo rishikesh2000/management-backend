@@ -5,8 +5,9 @@ var cors = require('cors')
 dotenv.config();  
 require('./config/dbConfig');
 const app = express();
-app.use(express.json());
 app.use(cors());
+
+app.use(express.json());
 
 const adduserRoute = require('./views/usersView')
 const superUserRoute = require('./views/superUserView')
