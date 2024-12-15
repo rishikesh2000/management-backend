@@ -27,8 +27,8 @@ app.get('/', (req, res) => {
     res.send('Server is running!');
 });
 
-app.use('/users', adduserRoute); 
-app.use('/superuser', superUserRoute); 
+app.use('/', adduserRoute); 
+app.use('/', superUserRoute); 
 
 app.use((req, res, next) => {
     res.status(404).json({ message: 'Endpoint not found' });
