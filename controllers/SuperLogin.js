@@ -83,6 +83,7 @@ exports.getLoggedInUser = async (req, res) => {
                 user,
             });
         } catch (error) {
-            res.status(500).json({ message: 'Internal Server Error', error });
+            console.error('Error fetching user data:', error);
+            res.status(500).json({ message: 'Internal Server Error' });
         }
     }
