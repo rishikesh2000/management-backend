@@ -59,6 +59,7 @@ exports.superLogin = async (req, res) => {
 
             return res.status(200).json({
                 message: "User logged in successfully",
+                token
             });        } else {
             return res.status(400).send("Email does not exist");
         }
